@@ -1,3 +1,4 @@
+//Doubly circular LL(in Home Work)
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -23,7 +24,8 @@ void InsertFirst(PPNODE First,PPNODE Last,int no)
     
      if((*First == NULL) && (*Last == NULL))   //Empty LL
     {
-        *First = *Last = newn;
+        *First = newn;
+        *Last = newn;
         (*Last)->next = *First;
     }
     else
@@ -32,7 +34,6 @@ void InsertFirst(PPNODE First,PPNODE Last,int no)
         (*First)->prev = newn; 
         *First = newn;
         (*Last)->next = *First;
-     
     }   
 }
  void InsertLast(PPNODE First,PPNODE Last,int no)
@@ -45,7 +46,8 @@ void InsertFirst(PPNODE First,PPNODE Last,int no)
     
     if((*First == NULL) && (*Last == NULL))   //Empty LL
     {
-        *First = *Last = newn;
+        *First = newn;
+        *Last = newn;
         (*Last)->next = *First;
     }
     else
@@ -98,6 +100,7 @@ void InsertAtPosition(PPNODE First,PPNODE Last,int no,int iPos)
         }
         newn->next = temp->next;
         temp->next->prev = newn;
+        
         temp->next = newn;
         newn->prev = temp;
     }
